@@ -9,8 +9,7 @@ pipeline {
   stages {
     stage('Initialize') {
       steps {
-        sh '''echo ${PATH}
-mvn clean'''
+        sh 'mvn clean'
       }
     }
   }
