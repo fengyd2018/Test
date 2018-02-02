@@ -12,5 +12,24 @@ pipeline {
         sh 'mvn --version'
       }
     }
+    stage('Firefox') {
+      parallel {
+        stage('Firefox') {
+          steps {
+            echo 'FireFox'
+          }
+        }
+        stage('Chrome') {
+          steps {
+            echo 'Chrome'
+          }
+        }
+      }
+    }
+    stage('Test') {
+      steps {
+        echo 'Test'
+      }
+    }
   }
 }
